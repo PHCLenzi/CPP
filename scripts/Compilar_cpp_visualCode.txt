@@ -1,0 +1,11 @@
+fonte https://www.youtube.com/watch?v=h96Z38oMJZA
+
+Forma 1: aperta F6
+
+Forma 2: 
+    a: Abre a aba "Executar e depurar(ctrl+shift+D) " com a sua pasta com o cpp aberta.
+    b: Aperta em launch json file
+    c: seleciona (c++ (GDB/LLDB))
+    d: Selecionar o "gcc.exe - criar e debugar o arquivo ativo"
+        d.1: alterar a variável de "external console" para true, para ver os print durante o debug.
+    e: Para debugar basta clicar na ceta verde no canto superior esquerdo.
