@@ -11,6 +11,9 @@ int main(){
 
     cout << "\nThe sizeof(matrice[0]) = "<< sizeof(matrice[0]) << "\n";
 
+    cout << "\nmatrice = "<< matrice[0] << "\n";
+
+
     matrice[0][0]=0;
     matrice[0][1]=0;
     matrice[0][2]=0;

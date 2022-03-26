@@ -1,6 +1,6 @@
 
 #include <cstdlib>
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std ;
 default_random_engine seed;
 
@@ -13,7 +13,7 @@ int main()
     int random, vida=5 ;
     int *pont_random;
     pont_random = &random;
-    inicio_1:
+    inicio_1:// goto
     system("cls");// comando de sistema para lipar a tela
 
     
@@ -30,47 +30,75 @@ int main()
     string banco_chaves [6] = {"papel", "casaco", "cama" , "armario", "computador", "mochila"};
 
     string palavra_alvo = banco_chaves[random], letras_lixo="";
-    cout << "\nDEBUG:: palavra_alvo -> "<<  palavra_alvo;
 
-    char palavra_em_branco[palavra_alvo.length()];
+    string  palavra_em_branco = palavra_alvo;
 
-    cout << "\nDEBUG:: sizeof(palavra_em_branco) -> "<<  sizeof(palavra_em_branco);
 
-    for(int i=0;i<sizeof(palavra_em_branco); i++)
+
+
+
+    for(int i=0;i<(palavra_em_branco.length()); i++)
         palavra_em_branco[i]= '_';
 
-    cout << "\n DEBUG:: palavra_branco -> "<<  palavra_em_branco;
 
 
     inicio_2:
 
     char letra_escolhida;
     bool acertou;
-    // while(vida>0){
-    int loop_aux =0;
-    while(loop_aux<1){
+    bool ganhou;
+    while(vida>0){
+    // int loop_aux =0;// mudar para o de cima
+    // while(loop_aux<2){
+    // while(loop_aux<2){
         //system("cls");
 
 
         cout << "\nPalavra chave: "<< palavra_em_branco;
-        cout << "\nLetras ja escolhidas: "<< letras_lixo << "Vidas = "<< vida;
+        cout << "\nLetras lixo ja escolhidas: "<< letras_lixo << " \nVidas = "<< vida;
         cout << "\ndigite uma letra minisculo: ";
         cin >> letra_escolhida;
         acertou =false;
         for(int i=0;i<palavra_alvo.length();i++){
             if(palavra_alvo[i]==letra_escolhida){
-                palavra_em_branco[i]==letra_escolhida;
+                palavra_em_branco[i]=letra_escolhida;
                 acertou = true;
+                cout << "\nAcertou a letra!";
+                
+                
             }
         }
-        (acertou)? : vida--;
+     
+        if (!acertou){
+            letras_lixo+=letra_escolhida;
+            letras_lixo+= ", ";
+            vida--;
+        }
+        
+        // loop_aux++;
+        //ferifica se a palavra foi concluida
+        ganhou=true;
+        for (int i=0;i<palavra_alvo.length();i++){
+            if(palavra_em_branco[i]=='_'){
+                ganhou=false;
+            }
 
-        loop_aux++;
+        }
+        if(ganhou){
+            break;
+        }
+
     }
 
 
+    if(!ganhou){
+        cout << "\n!!! GAME OVER  !!!";
+        cout << "\nA palavra era "<< palavra_alvo;
+    }
+    else{
+        cout << "\n!!! YOU WIN  !!!";
 
-
+    }
 
     return 0 ;
 }

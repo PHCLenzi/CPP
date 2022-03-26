@@ -15,7 +15,7 @@ int main(){
     }
     n=0;
     while(n++<9){
-        cout << "\nTeste";
+        cout << "Teste "<< n << "\n";
         if(n > 8)
             break;
     }
