@@ -1,0 +1,1 @@
+source = https://www.codeproject.com/Articles/820116/Embedding-Python-program-in-a-C-Cplusplus-code

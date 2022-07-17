@@ -24,7 +24,5 @@ int main(){
     *(p+1)=20;
     cout << "\n" << vetor[1] <<"\n";
 
-
-
     return 0;
 }

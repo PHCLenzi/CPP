@@ -1,20 +1,16 @@
-#include <iostream>
-
+# include <iostream>
 using namespace std;
+int main() {
+    string veiculo = "Carro";
+    string *pv;//armazena o endereço da variavel
 
-int main(){
+    pv =& veiculo;//pv recebe o endereço da variavel veiculo na RAM
+
+    cout << pv ; // imprime o endereço da variavel atribuida ao ponteiro pv
+    cout << veiculo << "\n" << &veiculo << "\n"<< pv ;
     
-    string veiculo="carro";
-    string *pv;// tem que ser do mesmo tipo da varíável que vou manipular
-    cout << veiculo << "\n";
-    pv = &veiculo; //ponteiro recebe indereço da vaiável veiculo
-    cout << "pv = "<< pv << "\n";
-    cout << "&veiculo = "<< &veiculo << "\n";
-    cout << "*pv = "<< *pv << "\n";
-
-    *pv="Moto";
-    cout << "veiculo = "<< veiculo << "\n";
-
+    *pv = "Moto"; // no endereço apontado por pv, adicione o valor "Moto"
+    cout << *pv  << "\n" << veiculo ; ; // imprime o que esta no endereço da variavel atribuida ao ponteiro pv
 
     return 0;
 }
