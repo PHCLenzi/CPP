@@ -4,7 +4,8 @@
 using namespace std;
 
 int main(){
-    // list<int> aula(5,50) //primeiro numero é a quantidade e ooutro é eh...
+    // list<int> aula(5,50) //primeiro numero é a quantidade e  ooutro é eh...
+    // funcoe insert() erase()
     list<int> aula;
     int tam=10;
     list<int>::iterator it;
@@ -32,5 +33,8 @@ int main(){
         aula.pop_front();
     }
     
+
+    cout << "fim!"<< endl;
     return 0;
 }
+
