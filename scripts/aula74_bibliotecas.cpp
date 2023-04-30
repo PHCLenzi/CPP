@@ -9,11 +9,18 @@ fonte: https://www.youtube.com/watch?v=XLlC2AVQeEA&list=PLx4x_zx8csUjczg1qPHavU1
 
 func <controle de abiente> abort() e exit(), atexit(), quick_exit(), at_quick_exit(),< _EXIT()
 func <variavel de ambiente> getenv(), system()
-func <pesquisa e ordenacao de listas> 
+func <pesquisa e ordenacao de listas> =qsort(){Colocar umm array, vetor em ordem}, bsearch(){pesquisa um elemento em um array ou vetor}
 */
 
 void fim(){
     cout << "CFB Cursos"<< endl;
+}
+
+int comparacao(const void* a, const void* b ){
+    return (*(int*)a - *(int*)b);
+    // 0-> a = b 
+    // >0-> a > b 
+    // <0-> a < b 
 }
 
 
@@ -35,6 +42,20 @@ int main(){
 
 
     // system("cls");// comando sistema para limpar a tela
+
+    int vetor [] = {16,1,8,2,3,4,5,6,7,8};
+    int pesq = 16;
+    int *pos;
+
+    qsort(vetor,10, sizeof(int),comparacao);// isado para botar o vetor ou array em ordem
+
+    for (int i = 0; i <10 ; i++){
+        cout << vetor[i] << endl;
+    }
+
+    pos = (int*)bsearch(&pesq,vetor,10,sizeof(int),comparacao);  //pesquisa um elemento
+
+    cout << "Elemento " << pesq << " esta na posicao " << *pos << endl;
     
     return 0;
 }
